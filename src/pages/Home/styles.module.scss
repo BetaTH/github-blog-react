@@ -1,0 +1,15 @@
+.homeConteiner {
+  .homeBody {
+    max-width: 86.4rem;
+    margin: 0px auto;
+    margin-top: calc(-10rem);
+    z-index: 1000;
+    .bodyHeader {
+      width: 100%;
+      height: 21.2rem;
+      background: #0b1b2b;
+      box-shadow: 0rem 0.2rem 2.8rem rgba(0, 0, 0, 0.2);
+      border-radius: 1rem;
+    }
+  }
+}

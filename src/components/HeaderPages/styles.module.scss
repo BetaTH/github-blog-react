@@ -1,0 +1,70 @@
+.homeHeader {
+  height: 29.6rem;
+  background: var(--profile);
+  position: relative;
+  .effectLeft {
+    position: absolute;
+    width: 40.9rem;
+    height: 18.8rem;
+    left: 0rem;
+    top: 7rem;
+  }
+  .logo {
+    position: absolute;
+    width: 14.8rem;
+    height: 9.8rem;
+    left: calc(50% - 14.8rem / 2);
+    top: 6.4rem;
+  }
+  .effectRight {
+    position: absolute;
+    width: 37.1rem;
+    height: 23.6rem;
+    left: 106.7rem;
+    top: 3rem;
+  }
+  .ellipseLeft {
+    position: absolute;
+    width: 236px;
+    height: 236px;
+    left: -130px;
+    top: -96px;
+
+    background: #14589c;
+    filter: blur(400px);
+    // position: absolute;
+    // width: 23.6rem;
+    // height: 23.6rem;
+    // left: -13rem;
+    // top: -9.6rem;
+    // background: var(--blurHeader);
+    // filter: blur(40rem);
+  }
+  .ellipseRight {
+    position: absolute;
+    width: 15.525rem;
+    height: 15.525rem;
+    right: -1.543rem;
+    top: -5.214rem;
+    // background: var(--blurHeader);
+    // filter: blur(36.8re);
+    // transform: rotate(15deg);
+  }
+  .rectangle {
+    position: absolute;
+    width: 891px;
+    height: 52px;
+    left: calc(50% - 891px / 2 - 2.5px);
+    top: 235px;
+
+    background: #14589c;
+    filter: blur(212px);
+    // position: absolute;
+    // width: 89.1rem;
+    // height: 5.2rem;
+    // left: calc(50% - 89.1rem / 2 - 0.25rem);
+    // top: 23.5rem;
+    // background: #14589c;
+    // filter: blur(21.2rem);
+  }
+}
