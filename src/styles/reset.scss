@@ -1,50 +1,75 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html,
-  body {
-    width: 100%;
-    height: 100%;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  html{
-    font-size: calc(100vw / 1440 * 10);
-    font-family: "Nunito", sans-serif;
-  }
-  
-  body {
-    background:var(--backgroud);
-    color: var(--text);
-    font-family: "Nunito", sans-serif;
-    -webkit-text-size-adjust: none;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-  
-  button {
-    background: transparent;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Nunito", sans-serif;
-  }
-  
-  select {
-    outline: none;
-    border: none;
-    display: inline-block;
-    font-family: "Nunito", sans-serif;
-  }
-  
-  input {
-    background: var(--input);
-    border: 0.1rem var(--border);
-    outline: none;
-    border: none;
-    display: inline-block;
-    font-family: "Nunito", sans-serif;
-  }
+html,
+body {
+  width: 100vw;
+  height: 100%;
+}
+
+html {
+  font-size: calc(100vw / 1440 * 10);
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  background: var(--backgroud);
+  color: var(--text);
+  font-family: "Nunito", sans-serif;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+button {
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Nunito", sans-serif;
+}
+
+select {
+  outline: none;
+  border: none;
+  display: inline-block;
+  font-family: "Nunito", sans-serif;
+}
+
+input {
+  background: var(--input);
+  border: 0.1rem var(--border);
+  outline: none;
+  border: none;
+  display: inline-block;
+  font-family: "Nunito", sans-serif;
+}
+
+::-webkit-input-placeholder {
+  color: var(--label);
+  font-weight: 400;
+  font-family: "Nunito";
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+}
+::-moz-placeholder {
+  color: var(--label);
+  font-weight: 400;
+  font-family: "Nunito";
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+}
+::-ms-placeholder {
+  color: var(--label);
+  font-weight: 400;
+  font-family: "Nunito";
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+}

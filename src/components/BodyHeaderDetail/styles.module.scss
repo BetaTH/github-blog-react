@@ -1,0 +1,132 @@
+.bodyHeader {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 16.8rem;
+  background: #0b1b2b;
+  box-shadow: 0rem 0.2rem 2.8rem rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  padding: 3.2rem;
+  position: relative;
+  .buttons {
+    display: flex;
+    width: 100%;
+    height: 1.9rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    .btnBack {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 0.8rem;
+      height: 100%;
+      border-bottom: 0.1rem solid var(--transparent);
+      transition: 0.2s;
+
+      .btnLink {
+        text-decoration: none;
+        height: 100%;
+        font-family: "Nunito";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.2rem;
+        line-height: 1.9rem;
+        text-transform: uppercase;
+        color: var(--blue);
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+      }
+      .btnIcon {
+        width: 1.2rem;
+        height: 1.2rem;
+        margin: 0.35rem 0rem;
+        flex: none;
+        order: 2;
+        flex-grow: 0;
+        color: var(--blue);
+      }
+      &:hover {
+        border-bottom: 0.1rem solid var(--blue);
+      }
+    }
+    .btnGit {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      height: 100%;
+      border-bottom: 0.1rem solid var(--transparent);
+      transition: 0.2s;
+
+      .btnLink {
+        text-decoration: none;
+        height: 100%;
+        font-family: "Nunito";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.2rem;
+        line-height: 1.9rem;
+        text-transform: uppercase;
+        color: var(--blue);
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+      }
+      .btnIcon {
+        width: 1.2rem;
+        height: 1.2rem;
+        margin: 0.35rem 0rem;
+        flex: none;
+        order: 2;
+        flex-grow: 0;
+        color: var(--blue);
+      }
+      &:hover {
+        border-bottom: 0.1rem solid var(--blue);
+      }
+    }
+  }
+
+  .postTitle {
+    width: 100%;
+    height: 3.1rem;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+    color: var(--title);
+    margin-bottom: 0.8rem;
+  }
+
+  .social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.4rem;
+    width: 100%;
+    height: 2.6rem;
+
+    .socialCard {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      .icon {
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+      .span {
+        height: 100%;
+        font-family: "Nunito";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        color: var(--span);
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+      }
+    }
+  }
+}
