@@ -3,11 +3,14 @@ import { useContext, useRef } from "react";
 import { UserContext } from "../../contexts/UserContext";
 
 export function SearchPostsHome() {
-  const { postList, setSearch, search } = useContext(UserContext);
+  const { postList, setSearch, search, setIsLoadingPosts } =
+    useContext(UserContext);
   const inputRef = useRef<HTMLInputElement>(null);
 
   function handlerSubmit(event?: React.FormEvent<HTMLFormElement>) {
     event?.preventDefault();
+    if (inputRef.current?.value == search) return;
+    setIsLoadingPosts(true);
     setSearch(inputRef.current?.value as string);
   }
 

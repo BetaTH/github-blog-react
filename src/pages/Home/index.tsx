@@ -5,8 +5,9 @@ import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { BodyHeaderHome } from "../../components/BodyHeaderHome";
 import { SearchPostsHome } from "../../components/SearchPostsHome";
+import { Loading } from "../../components/Loading";
 export function Home() {
-  const { postList } = useContext(UserContext);
+  const { postList, isLoadingPosts } = useContext(UserContext);
 
   return (
     <div className={styles.homeConteiner}>
@@ -14,9 +15,16 @@ export function Home() {
         <BodyHeaderHome />
         <SearchPostsHome />
         <div className={styles.cardsConteiner}>
-          {postList.items.map((post) => {
-            return <CardPost key={post.id} post={post} />;
-          })}
+          {isLoadingPosts ? (
+            <>
+              <Loading />
+              <Loading />
+            </>
+          ) : (
+            postList.items.map((post) => {
+              return <CardPost key={post.id} post={post} />;
+            })
+          )}
         </div>
       </PagesLayout>
     </div>
