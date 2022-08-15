@@ -27,7 +27,6 @@ export function BodyHeaderDetail(headerProps: headerProps) {
   const navigate = useNavigate();
   const post = headerProps.post;
   const date = new Date(post.created_at as string);
-  console.log(date);
   const dateFormatted = post.created_at
     ? formatDistanceToNow(date, {
         locale: ptBR,

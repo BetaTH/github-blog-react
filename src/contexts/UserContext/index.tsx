@@ -30,6 +30,8 @@ interface IUserContext {
   setPostList: (newState: any) => void;
   isLoading: boolean;
   setIsLoading: (newState: boolean) => void;
+  search: string;
+  setSearch: (newState: string) => void;
 }
 
 const initValues = {
@@ -60,6 +62,8 @@ const initValues = {
   setPostList: () => {},
   isLoading: true,
   setIsLoading: () => {},
+  search: "",
+  setSearch: () => {},
 };
 
 export const UserContext = createContext<IUserContext>(initValues);
@@ -68,19 +72,25 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
   const [userData, setUserData] = useState(initValues.userData);
   const [isLoading, setIsLoading] = useState(initValues.isLoading);
   const [postList, setPostList] = useState(initValues.postList);
-  const effecOnlyRun = useRef(false);
+  const [search, setSearch] = useState(initValues.search);
+  //const effecOnlyRun = useRef(false);
+  const userCredentials = {
+    user: "BetaTH",
+    userIssues: "remarkjs",
+    userIssuesRepo: "react-markdown",
+  };
 
   useEffect(() => {
-    if (effecOnlyRun.current === false) {
-      api.get("users/BetaTH").then((res) => setUserData(res.data));
-      api
-        .get("search/issues?q=%20repo:BetaTH/github-blog-react")
-        .then((res) => setPostList(res.data));
-    }
-    return () => {
-      effecOnlyRun.current = true;
-    };
-  }, []);
+    console.log(search);
+    api
+      .get(`users/${userCredentials.user}`)
+      .then((res) => setUserData(res.data));
+    api
+      .get(
+        `search/issues?q=${search}%20repo:${userCredentials.userIssues}/${userCredentials.userIssuesRepo}`
+      ) //BetaTH/github-blog-react
+      .then((res) => setPostList(res.data));
+  }, [search]);
 
   const values = {
     userData,
@@ -89,6 +99,8 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
     setPostList,
     isLoading,
     setIsLoading,
+    search,
+    setSearch,
   };
   return <UserContext.Provider value={values}>{children}</UserContext.Provider>;
 };

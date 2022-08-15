@@ -1,6 +1,5 @@
 import styles from "./styles.module.scss";
-import { HeaderPages } from "../../components/HeaderPages";
-import { BodyPages } from "../../components/BodyPages";
+import { PagesLayout } from "../../components/PagesLayout";
 import { CardPost } from "../../components/CardPost";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
@@ -11,8 +10,7 @@ export function Home() {
 
   return (
     <div className={styles.homeConteiner}>
-      <HeaderPages />
-      <BodyPages>
+      <PagesLayout>
         <BodyHeaderHome />
         <SearchPostsHome />
         <div className={styles.cardsConteiner}>
@@ -20,7 +18,7 @@ export function Home() {
             return <CardPost key={post.id} post={post} />;
           })}
         </div>
-      </BodyPages>
+      </PagesLayout>
     </div>
   );
 }

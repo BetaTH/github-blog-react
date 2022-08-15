@@ -24,7 +24,6 @@ export function CardPost(cardProps: cardProps) {
 
   const post = cardProps.post;
   const date = new Date(post.created_at as string);
-  console.log(date);
   const dateFormatted = post.created_at
     ? formatDistanceToNow(date, {
         locale: ptBR,
@@ -33,9 +32,11 @@ export function CardPost(cardProps: cardProps) {
     : "";
   return (
     <div className={styles.card} onClick={() => goToDetailsPage(post.id)}>
-      <h3 className={styles.postTitle}>{post.title}</h3>
+      <div className={styles.cardHeader}>
+        <h3 className={styles.postTitle}>{post.title}</h3>
+        <span className={styles.postDate}>{dateFormatted}</span>
+      </div>
       <p className={styles.postResume}>{post.body}</p>
-      <span className={styles.postDate}>{dateFormatted}</span>
     </div>
   );
 }

@@ -1,11 +1,23 @@
 import styles from "./styles.module.scss";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { UserContext } from "../../contexts/UserContext";
 
 export function SearchPostsHome() {
-  const { postList } = useContext(UserContext);
+  const { postList, setSearch, search } = useContext(UserContext);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  function handlerSubmit(event?: React.FormEvent<HTMLFormElement>) {
+    event?.preventDefault();
+    setSearch(inputRef.current?.value as string);
+  }
+
   return (
-    <div className={styles.searchConteiner}>
+    <form
+      className={styles.searchConteiner}
+      onSubmit={(event) => {
+        handlerSubmit(event);
+      }}
+    >
       <div className={styles.searchHeader}>
         <span className={styles.searchSpan}>Pesquisar</span>
         <span className={styles.countPubSpan}>
@@ -13,10 +25,13 @@ export function SearchPostsHome() {
         </span>
       </div>
       <input
+        defaultValue={search}
+        ref={inputRef}
         className={styles.searchInput}
         type="text"
         placeholder="Buscar Conteúdo"
+        onBlur={() => (inputRef.current?.value === "" ? handlerSubmit() : null)}
       />
-    </div>
+    </form>
   );
 }
