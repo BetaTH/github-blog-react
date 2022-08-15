@@ -1,3 +1,6 @@
+import ReactMarkdown from "react-markdown";
+import rehypeKatex from "rehype-katex";
+import remarkMath from "remark-math";
 import styles from "./styles.module.scss";
 
 interface IssueDetailConteinerProps {
@@ -18,7 +21,12 @@ export function IssueDetailConteiner(
   const post = IssueDetailConteinerProps.post;
   return (
     <div className={styles.bodyIssueConteiner}>
-      <h1 className={styles.bodyIssue}>{post.body}</h1>
+      <ReactMarkdown
+        className={styles.bodyIssue}
+        children={post.body}
+        remarkPlugins={[remarkMath]}
+        rehypePlugins={[rehypeKatex]}
+      />
     </div>
   );
 }

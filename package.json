@@ -21,6 +21,8 @@
     "react-markdown": "^8.0.3",
     "react-router-dom": "^6.3.0",
     "rehype-highlight": "^5.0.2",
+    "rehype-katex": "^6.0.2",
+    "remark-math": "^5.1.1",
     "sass": "^1.54.4"
   },
   "devDependencies": {
